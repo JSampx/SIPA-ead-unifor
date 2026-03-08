@@ -51,8 +51,8 @@ with col1:
 
 with col2:
     st.write (f"""
-    #### {num_pedidos_antes/num_pedidos * 100:.2f} % de pedidos entregues antes do prazo  \n
-    #### {num_pedidos_prazo/num_pedidos * 100:.2f} % de pedidos entregues no prazo  \n
+    #### {num_pedidos_antes/num_pedidos:.2%} de pedidos entregues antes do prazo  \n
+    #### {num_pedidos_prazo/num_pedidos:.2%} de pedidos entregues no prazo  \n
     #### {(num_pedidos - (num_pedidos_antes + num_pedidos_prazo))/num_pedidos * 100:.2f} % de pedidos atrasados""")
 # %%
 
