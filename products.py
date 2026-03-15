@@ -13,4 +13,5 @@ st.write(
          
          """)
 products.shape
+products
 # %%

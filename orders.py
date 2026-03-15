@@ -18,6 +18,17 @@ anos_list = sorted(orders["order_purchase_timestamp"].dt.year.unique())
 ano = st.sidebar.multiselect("Ano", anos_list,
                              placeholder="Selecione o(s) ano(s)",
                              default=anos_list)
+
+from products import products
+from items import items
+df_mesclado1  = orders.merge(items, on="order_id")
+df_mesclado2 = products.merge(df_mesclado1, on="product_id")
+# df_mesclado2.columns
+
+df_com_filtros = df_mesclado2[(df_mesclado2['order_purchase_timestamp'].dt.year.isin(ano))]
+# df_mesclado2
+st.dataframe(df_com_filtros)
+
 # %%
 # orders['order_status'].describe()
 # %%
